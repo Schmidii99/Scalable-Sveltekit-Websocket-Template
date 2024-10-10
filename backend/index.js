@@ -13,7 +13,10 @@ const io = new Server(server, {
   cors: {
     origin: FRONTEND_SERVER,
     methods: ["GET", "POST"],
-  }
+    transports: ['websocket'],
+    credentials: true
+  },
+  allowEIO3: true
 });
 
 io.on('connection', (socket) => {
